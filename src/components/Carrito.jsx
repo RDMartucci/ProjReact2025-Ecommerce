@@ -8,38 +8,35 @@ export default function Carrito({ productosCarrito, manejoEliminar }) {
                 , 0);
     console.log("Total: " + total);
     
-    return (
-        <div className="carrito-container">
-            {productosCarrito.length > 0 ? (
-                productosCarrito.map((producto) => (
-                    <CardCarrito 
-                        key={producto.id} 
-                        producto={producto} 
-                        manejoCarrito={manejoEliminar}
-                    />
-                ))
-            ) : (
-                <p><span className='carrito-vacio'>Carrito vacío</span></p>
-                //total > 0 ? <span>Total a pagar: {total} $</span>: <></>
-            )}
-        </div>
-    );
-}
+    // return (
+    //     <div className="carrito-container">
+    //         {productosCarrito.length > 0 ? (
+    //             productosCarrito.map((producto) => (
+    //                 <CardCarrito 
+    //                     key={producto.id} 
+    //                     producto={producto} 
+    //                     manejoCarrito={manejoEliminar}
+    //                 />
+    //             ))
+    //         ) : (
+    //             <p><span className='carrito-vacio'>Carrito vacío</span></p>
+    //         )}
+    //     </div>
+    // );
+//}
 
-/********
 
     return(
-        <div className="carrito-conteiner">
+        <div className="carrito-container">
             {productosCarrito.length > 0 ? productosCarrito.map((producto) => (
-                <CarritoCard producto={producto} />
+                <CardCarrito
+                    key={producto.id} 
+                    producto={producto} 
+                    manejoCarrito={manejoEliminar}
+                />
             ))
-            : <p>Carrito vacio</p>}
+            : <p><span className='carrito-vacio'>Carrito vacío</span></p>}
             {total > 0 ? <span>Total a pagar: {total} $</span>: <></>}
         </div>
     )
 } 
-  
-  
-  
-  
- */
