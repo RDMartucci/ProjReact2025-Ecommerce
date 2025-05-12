@@ -7,24 +7,6 @@ export default function Carrito({ productosCarrito, manejoEliminar }) {
                                         subTotal + producto.price * producto.cantidad)
                 , 0);
     console.log("Total: " + total);
-    
-    // return (
-    //     <div className="carrito-container">
-    //         {productosCarrito.length > 0 ? (
-    //             productosCarrito.map((producto) => (
-    //                 <CardCarrito 
-    //                     key={producto.id} 
-    //                     producto={producto} 
-    //                     manejoCarrito={manejoEliminar}
-    //                 />
-    //             ))
-    //         ) : (
-    //             <p><span className='carrito-vacio'>Carrito vacío</span></p>
-    //         )}
-    //     </div>
-    // );
-//}
-
 
     return(
         <div className="carrito-container">
@@ -35,8 +17,8 @@ export default function Carrito({ productosCarrito, manejoEliminar }) {
                     manejoCarrito={manejoEliminar}
                 />
             ))
-            : <p><span className='carrito-vacio'>Carrito vacío</span></p>}
-            {total > 0 ? <span>Total a pagar: {total} $</span>: <></>}
+            : <div className='titulo-carrito'><span  id='carrito-vacio'>Carrito vacío</span></div>}
+            {total > 0 ? <div className='titulo-carrito'><span id='total-a-pagar'>Total a pagar: $ {total} </span></div>: <></>}
         </div>
     )
 } 
