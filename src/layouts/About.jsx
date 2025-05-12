@@ -1,14 +1,14 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Main from "../components/Main";
 
-export default function Home() {
+export default function About() {
 
     return (
         <>
             <div>
                 <Header />
-                <Main />
+                <h2>Acerca de la empresa, sobre nosotros</h2>
+                <p>aqui va la mision y politicas y bla bla bla....</p>
                 <Footer />
             </div>
         </>
