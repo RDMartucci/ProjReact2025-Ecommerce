@@ -9,7 +9,6 @@ export default function Header() {
                     <h2>Proyecto E-Commerce</h2>
                     <h3>mi app con REACT</h3>
                 </div>
-                <Nav/>
             </header>
         </> 
     ); 
