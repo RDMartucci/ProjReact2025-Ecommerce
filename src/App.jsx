@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import './styles/variables.css';
-import './App.css';
+import './styles/App.css';
 
 import Home from './layouts/Home'
 import Nav from './components/nav';
