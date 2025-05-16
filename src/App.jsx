@@ -1,20 +1,24 @@
 import { useState } from 'react'
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './styles/App.css';
 
 import Home from './layouts/Home'
 import Nav from './components/nav';
 import ProductosContainer from './components/ProductosContainer';
-import About from './layouts/About';
-import Contact from './layouts/Contact';
+import ProductoDetalle from './components/ProductoDetalle';
 import Carrito from './components/Carrito';
-import PagProductos from './layouts/productos';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import About from './components/acerca';
+import Admin from './components/admin';
+import Login from './components/Login';
+import Contacto from './components/contacto';
 
 function App() {
   const [productosCarrito, setProductosCarrito] = useState([])
+  const [usuarioLogeado, setUsuarioLogeado] = useState(false)
+  const [adminLogeado, setAdminLogeado] = useState(false)
 
   function manejoCarrito(producto) {
     const existe = productosCarrito.find(p => p.id === producto.id);
@@ -35,26 +39,44 @@ function App() {
     }
   }
 
-  function eliminarDelCarrito(productoAEliminar) {
+  function eliminarDelCarrito(id) {
     const nuevoCarrito = productosCarrito.filter((producto) => (
-      producto.id !== productoAEliminar.id)
+      producto.id !== id)
     );
     setProductosCarrito(nuevoCarrito);
   }
+
+  //   function borrarProductoCarrito(id){
+  //   console.log(id)
+  //   const nuevoCarrito = productosCarrito.filter((p) => p.id !== id);
+  //   setProductosCarrito(nuevoCarrito);
+  // }
+
+  function manejarAdmin() {
+    setAdminLogeado(!adminLogeado)
+  }
+
+  function manejarUser(){
+    setUsuarioLogeado(!usuarioLogeado)
+  }
+
 
   return (
     <>
       <Router>
         <div>
           <Header />
-          <Nav />
+          <Nav productosCarrito={productosCarrito}/>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/productos' element={<ProductosContainer manejoCarrito={manejoCarrito} />} />
+            <Route path='/productos' element={<ProductosContainer />} />
             {/* <Route path='/productos' element={<PagProductos manejoCarrito={manejoCarrito}/>}/> */}
-            <Route path='/about' element={<About />} />
-            <Route path='/contacto' element={<Contact />} />
-            <Route path='/carrito' element={<Carrito productosCarrito={productosCarrito} manejoEliminar={eliminarDelCarrito} />} />
+            <Route path='/acerca' element={<About />} />
+            <Route path='/contacto' element={<Contacto />} />
+            <Route path='/carrito' element={<Carrito productosCarrito={productosCarrito} manejoEliminar={eliminarDelCarrito} />} />  
+            <Route path='/login' element={<Login user={usuarioLogeado} admin={adminLogeado} setLogeadoAdmin={manejarAdmin} setLogeadoUser={manejarUser}/>}/>
+            <Route path='/admin' element={adminLogeado ? <Admin/> : <Navigate to={"/login"} replace/>} />
+            <Route path="/productos/:id" element={<ProductoDetalle manejoCarrito={manejoCarrito} />} />
           </Routes>
           <Footer />
         </div>
@@ -63,3 +85,5 @@ function App() {
   )
 }
 export default App
+
+

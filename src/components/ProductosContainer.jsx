@@ -22,9 +22,9 @@ export default function ProductosContainer({manejoCarrito}) {
             });
     }, []);
 
-    function functionEnProductos(producto){
-        manejoCarrito(producto)
-    }
+    // function functionEnProductos(producto){
+    //     manejoCarrito(producto)
+    // }
 
     if (cargando) {
         return <p>Cargando productos...</p>;
@@ -38,7 +38,6 @@ export default function ProductosContainer({manejoCarrito}) {
                         <CardProducto
                             key={producto.id}
                             producto={producto}
-                            manejoCarrito={functionEnProductos}
                         />
                     ))}
                 </div>
