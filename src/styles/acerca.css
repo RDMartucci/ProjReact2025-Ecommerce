@@ -1,0 +1,9 @@
+.about{
+    display: flex;
+}
+.titulo{
+    text-transform: capitalize;
+}
+.leyenda{
+    text-align: justify;
+}
