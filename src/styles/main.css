@@ -5,3 +5,25 @@ main {
 main section {
     text-transform: capitalize;
 }
+.titulo {
+    text-shadow: 1px 1px 5px var(--turquoise);
+}
+
+.texto-principal {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    list-style: none;
+}
+
+ul li{
+    margin-bottom: 1em;
+}
+ul li span {
+    text-transform: capitalize;
+    color: var(--blanco);
+    text-shadow: 1px 1px 5px var(--black);
+}
+ul li p {
+    color: var(--turquoise);
+}
