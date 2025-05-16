@@ -1,10 +1,10 @@
 import "../styles/Cards.css";
 
-export default function CardCarrito({ producto, manejoCarrito }) {
+export default function CardCarrito({ producto, funcionDisparadora }) {
     
     function eliminarProducto() {
-        console.log("Paso 1 carrito: Eliminar producto:", producto.id);
-        manejoCarrito(producto);
+        console.log("Eliminando del  carrito producto id:", producto.id);
+        funcionDisparadora(producto.id);
     }
 
     return (
