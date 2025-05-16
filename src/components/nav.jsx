@@ -12,13 +12,13 @@ export default function Nav() {
                         <li key={index}><Link to={l}></Link></li>
                     ))} */}
 
-                    <li><Link to="/" >Inicio</Link></li>  
-                    <li><Link to="/productos" >Productos</Link></li>  
-                    <li><Link to="/about" >acerca de</Link></li>  
-                    <li><Link to="/contacto" >contacto</Link></li>  
-                    <li><Link to="">Login</Link> </li>  
-                    <li><Link to="">Admin</Link> </li>  
-                    <li><Link to="/carrito" >Carrito</Link></li>
+                    <li><Link to="/" className='link-nav'>inicio</Link></li>  
+                    <li><Link to="/productos" className='link-nav'>productos</Link></li>  
+                    <li><Link to="/about" className='link-nav'>acerca de</Link></li>  
+                    <li><Link to="/contacto" className='link-nav'>contacto</Link></li>  
+                    <li><Link to="" className='link-nav'>log in</Link> </li>  
+                    <li><Link to="" className='link-nav'>admin</Link> </li>  
+                    <li><Link to="/carrito" className='link-nav'>carrito</Link></li>
                 </ul>
             </nav>
 
