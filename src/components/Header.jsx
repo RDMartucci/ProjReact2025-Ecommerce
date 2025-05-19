@@ -14,7 +14,7 @@ export default function Header() {
                     <img src={broncoLogo} className='logo-img'/>
                 </div> 
                 <div className='banner-intro'>
-                    <span className='banner-intro-texto'>transforman tu hogar</span>
+                    <span className='banner-intro-texto'>armonizan tu hogar</span>
                 </div>
             </header>
         </> 

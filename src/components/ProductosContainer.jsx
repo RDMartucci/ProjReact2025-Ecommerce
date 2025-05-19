@@ -22,17 +22,14 @@ export default function ProductosContainer({manejoCarrito}) {
             });
     }, []);
 
-    // function functionEnProductos(producto){
-    //     manejoCarrito(producto)
-    // }
-
     if (cargando) {
-        return <p>Cargando productos...</p>;
+        return <p className="mensaje-de-carga">Cargando productos...</p>;
     } else if (error) {
         return <p>{error}</p>;
     } else {
         return (
-            <div className="pagina">
+            <section>
+                <h2 className='titulo'>nuestros productos</h2>
                 <div className="productos-container">
                     {productos.map((producto) => (
                         <CardProducto
@@ -41,7 +38,7 @@ export default function ProductosContainer({manejoCarrito}) {
                         />
                     ))}
                 </div>
-            </div>
+            </section>
         );
     }
 }

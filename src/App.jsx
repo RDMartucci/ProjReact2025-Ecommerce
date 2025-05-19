@@ -46,12 +46,6 @@ function App() {
     setProductosCarrito(nuevoCarrito);
   }
 
-  //   function borrarProductoCarrito(id){
-  //   console.log(id)
-  //   const nuevoCarrito = productosCarrito.filter((p) => p.id !== id);
-  //   setProductosCarrito(nuevoCarrito);
-  // }
-
   function manejarAdmin() {
     setAdminLogeado(!adminLogeado)
   }

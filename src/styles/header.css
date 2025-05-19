@@ -3,7 +3,7 @@ header {
     height: 15vh;
     display: flex;
     justify-content: space-evenly;
-    background-color: var(--orange);
+    background-color: var(--blanco);
     flex-direction: row;
     flex-wrap: nowrap;
     /* align-content: center; */
@@ -17,6 +17,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 0px 12px 1px var(--sombra01);
 }
 .logo-img {
     width: 340px;
@@ -34,8 +35,8 @@ header {
     font-size: 24px;
     text-transform: capitalize;
     text-align: center;
-    color: var(--turquoise);
-    text-shadow: 1px 1px 3px var(--black);
+    color: var(--orange);
+    text-shadow: 2px 2px 2px var(--fondo), 1px 0px 6px var(--black);
 }
 
 /*******/
