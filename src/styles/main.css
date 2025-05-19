@@ -6,7 +6,7 @@ main section {
     text-transform: capitalize;
 }
 .titulo {
-    text-shadow: 1px 1px 5px var(--turquoise);
+    text-shadow: 1px 1px 5px var(--green);
 }
 
 .texto-principal {
@@ -26,4 +26,5 @@ ul li span {
 }
 ul li p {
     color: var(--turquoise);
+    line-height: 16.2px;
 }

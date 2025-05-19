@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../styles/ProductoDetalle.css";
+import '../styles/Cards.css';
+// import "../styles/ProductoDetalle.css";
 import { Mensaje } from "../assets/SweetAlert";
 
 function ProductoDetalle({ manejoCarrito }) {
@@ -48,18 +49,18 @@ function ProductoDetalle({ manejoCarrito }) {
     if (!producto) return null;
 
     return (
-        <div className="detalle-container">
-            <img className="detalle-imagen" src={producto.imagen} alt={producto.name} />
-            <div className="detalle-info">
-                <h2>{producto.name}</h2>
-                <p>{producto.description}</p>
-                <p>{producto.price} $</p>
-                <div className="detalle-contador">
-                    <button onClick={restarContador}>-</button>
-                    <span>{cantidad}</span>
-                    <button onClick={sumarContador}>+</button>
+        <div className="prod-detalle-container">
+            <img className="prod-detalle-imagen" src={producto.imagen} alt={producto.name} />
+            <div className="card-prod-detalle-info">
+                <h2 className="prod-nombre">{producto.name}</h2>
+                <p className="prod-descripcion">{producto.description}</p>
+                <p className="prod-precio">$ {producto.price}</p>
+                <div className="prod-detalle-cantidad">
+                    <button onClick={restarContador} className="btn-prod-cantidad">-</button>
+                    <span className="prod-cantidad">{cantidad}</span>
+                    <button onClick={sumarContador} className="btn-prod-cantidad">+</button>
                 </div>
-                <button onClick={agregarAlCarrito}>Agregar al carrito</button>
+                <button onClick={agregarAlCarrito} className="btn-agregar-al-carrito">Agregar al carrito</button>
             </div>
         </div>
     );

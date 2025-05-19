@@ -18,12 +18,21 @@ nav ul li {
     width: 100%;
     text-decoration: none; 
     padding: 0.3em;
-    color: var(--blanco);
+    /* color: var(--blanco); */
+    color: var(--green);
     transition: all 0.3s ease-out ;
 }
 .link-nav:hover{
-    background-color: var(--orange);
-    color: black;
+    /* background-color: var(--orange); */
+    /* background-color: var(--blanco); */
+    background-color: var(--sombra01);
+    /* color: black; */
+    color: var(--orange);
     transition: all 0.3s ease-out ;
 }
 
+.cantidad-en-carrito{
+    padding: 0 5px;
+    text-align: center;
+    text-shadow: 1px 1px 5px var(--sombra01);
+}
