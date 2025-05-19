@@ -107,7 +107,7 @@ button.card-producto-btn {
     padding: 8px 30px;
 }
 
-
+/* ** */
 .mensaje-de-carga {
     text-transform: uppercase;
     font-size: 24px;
@@ -115,6 +115,48 @@ button.card-producto-btn {
     color: var(--black);
 }
 /******/
+
+/* *** Card para el Carrito *** */
+/* Card para el carrito */
+.card-carrito{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--blanco);
+    border: 1px solid var(--sombra01);
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    height: 150px;
+}
+.card-carrito-nombre{
+    font-weight: bolder;
+    text-align: center;
+    text-transform: capitalize;
+    width: 20%;
+}
+.card-carrito-descripcion{
+    text-align: center;
+    width: 40%;
+}
+.card-carrito-precio{
+    /* background-color: var(--sombra01); */
+    color: var(--black);
+    padding: 0.3em 2em;
+}
+img.card-carrito-img{
+    width: 100px;
+    height: 100%;
+    border-radius: 50%;
+}
+button.card-carrito-btn{
+    padding: 0.3em 2em;
+    background-color: aquamarine;
+    color: black;
+    width: 3%;
+    height: 30%;
+}
 
 
 /** media queries ***/

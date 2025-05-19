@@ -1,64 +1,53 @@
 .carrito-container{
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-    /* height: 200px; */
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 95%;
+    margin: 0 auto;
 }
-.titulo-carrito{
-    padding: 1em 3em;
-    background-color: darkslategrey;
-    border: 1px solid #ddd;
-    border-radius: 19px;
-    width: 100%;
-    text-align: center;
-}
-
-#total-a-pagar{
-    font-size: xx-large;
-    color: #75c34f;
-}
-
-/* Card para el carrito */
-.card-carrito{
-    /*border: solid;*/
-    border-color: black;
+.carrito-titulos{
     display: flex;
-    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
     align-items: center;
-    justify-content: space-between;
-    background-color: bisque;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 100%;
-    text-align: center;
-    height: 150px;
-}
-.card-carrito-nombre{
-    font-weight: bolder;
-    text-align: center;
-    text-transform: capitalize;
-    width: 20%;
-}
-.card-carrito-descripcion{
-    text-align: center;
-    width: 40%;
-}
-.card-carrito-precio{
-    background-color: brown;
-    color: aliceblue;
-    padding: 0.3em 2em;
-}
-img.card-carrito-img{
-    width: 100px;
-    height: 100%;
-    border-radius: 50%;
-}
 
-button.card-carrito-btn{
-    padding: 0.3em 2em;
-    background-color: aquamarine;
-    color: black;
-    width: 3%;
-    height: 30%;
+    background-color: var(--sombra01);
+    width: 100%;
+}
+.carrito-titulo{
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.carrito-titulos-p1{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 40vw;
+}
+.carrito-titulos-p2{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 29vw;
+    margin-left: 110px;
+}
+.carrito-total{
+    display: block;
+    width: 100%;
+    font-size: xx-large;
+    color: var(--turquoise);
+    background-color: var(--green);
+    text-align: right;
+    margin: auto;
+    padding: 0 10px;
+}
+.carrito-vacio{
+    background-color: var(--sombra01);
+    color: var(--turquoise);
+    text-align: center;
+}
+.marg-top3{
+    margin-top: 3em;
 }
