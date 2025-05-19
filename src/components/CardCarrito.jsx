@@ -17,16 +17,16 @@ export default function CardCarrito({ producto, funcionDisparadora }) {
             <h3 className="card-carrito-titulo">{producto.name}</h3>
             <p className="card-carrito-descripcion">{producto.description}</p>
             <div className="card-carrito-precio">
-                <p className="card-carrito-precio-titulo">Precio unitario</p>
+                {/* <p className="card-carrito-precio-titulo">Precio unitario</p> */}
                 <p className="card-carrito-precio-prod">$ {producto.price}</p>
             </div>
             <span className="card-carrito-cantidad">{producto.cantidad}</span>
             <div className="card-carrito-precio">
-                <p className="card-carrito-precio-titulo">Precio total</p>
+                {/* <p className="card-carrito-precio-titulo">subtotal</p> */}
                 <span className="card-carrito-precio-prod">$ {producto.cantidad * producto.price}</span>
             </div>
             <button 
-                className="card-carrito-boton-eliminar" 
+                className="carrito-boton-eliminar-prod" 
                 onClick={eliminarProducto}
             >
                 X
