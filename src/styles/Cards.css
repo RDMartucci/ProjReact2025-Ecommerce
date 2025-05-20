@@ -61,8 +61,7 @@ button.card-producto-btn {
     align-items: center; */
 }
 .prod-detalle-imagen {
-    min-width: 320px;
-    max-width: 500px;
+    width: 320px;
     height: 47vh;
     border-radius: 10px;
     object-fit: cover;
@@ -146,7 +145,7 @@ button.card-producto-btn {
 }
 img.card-carrito-img{
     width: 150px;
-    height: 100%;
+    height: 130px;
 }
 button.card-carrito-btn{
     padding: 0.3em 2em;
@@ -156,11 +155,12 @@ button.card-carrito-btn{
     height: 30%;
 }
 .carrito-boton-eliminar-prod{
-    padding: 0.3em 2em;
+    margin-right: 5px;
+    padding: 0.3em 1em;
     background-color: var(--orange);
     color: var(--black);
     width: 5%;
-    height: 30%;
+    height: 25%;
     text-align: center;
 }
 

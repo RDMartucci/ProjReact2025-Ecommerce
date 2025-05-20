@@ -32,7 +32,10 @@ nav ul li {
 }
 
 .cantidad-en-carrito{
+    margin-left: 8px;
     padding: 0 5px;
+    border-radius: 10px;
     text-align: center;
+    background-color: var(--green);
     text-shadow: 1px 1px 5px var(--sombra01);
 }

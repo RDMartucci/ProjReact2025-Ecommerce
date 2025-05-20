@@ -15,7 +15,7 @@
     width: 100%;
 }
 .carrito-titulo{
-    font-size: 24px;
+    font-size: 14px;
     text-transform: uppercase;
 }
 .carrito-titulos-p1{
@@ -28,10 +28,10 @@
 .carrito-titulos-p2{
     display: flex;
     flex-wrap: nowrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    width: 29vw;
-    margin-left: 110px;
+    width: 25vw;
+    margin-left: 13vw;
 }
 .carrito-total{
     display: block;
