@@ -47,7 +47,7 @@ export default function Carrito({ productosCarrito, manejoEliminar, usuarioLogea
                     : <div className='carrito-titulo marg-top3'>
                         <span className='carrito-total carrito-vacio'>Carrito vacío</span>
                     </div>}
-                {total > 0 ? <div className='carrito-titulo'>
+                {total > 0 ? <div className='carrito-titulos'>
                                 <span className='carrito-total'>Total a pagar: 
                                     <span className='monto-total'>$ {total.toFixed(2)} </span>
                                 </span>

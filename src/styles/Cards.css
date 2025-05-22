@@ -139,6 +139,8 @@ button.card-producto-btn {
     width: 100%;
     text-align: center;
     height: 150px;
+    margin: 0.3em 0;
+    box-shadow: 0px 0px 6px 1px black;
 }
 .card-carrito-titulo{
     font-weight: bolder;
