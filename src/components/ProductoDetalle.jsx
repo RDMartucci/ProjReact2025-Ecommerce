@@ -56,9 +56,9 @@ function ProductoDetalle({ manejoCarrito }) {
                 <p className="prod-descripcion">{producto.description}</p>
                 <p className="prod-precio">$ {producto.price}</p>
                 <div className="prod-detalle-cantidad">
-                    <button onClick={restarContador} className="btn-prod-cantidad">-</button>
+                    <button onClick={restarContador} className="btn-prod-cantidad btn-menos">-</button>
                     <span className="prod-cantidad">{cantidad}</span>
-                    <button onClick={sumarContador} className="btn-prod-cantidad">+</button>
+                    <button onClick={sumarContador} className="btn-prod-cantidad btn-mas">+</button>
                 </div>
                 <button onClick={agregarAlCarrito} className="btn-agregar-al-carrito">Agregar al carrito</button>
             </div>

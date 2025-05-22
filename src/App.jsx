@@ -45,6 +45,9 @@ function App() {
     );
     setProductosCarrito(nuevoCarrito);
   }
+  function vaciarCarrito(){
+    setProductosCarrito([]);
+  }
 
   function manejarAdmin() {
     setAdminLogeado(!adminLogeado)
@@ -67,7 +70,7 @@ function App() {
             {/* <Route path='/productos' element={<PagProductos manejoCarrito={manejoCarrito}/>}/> */}
             <Route path='/acerca' element={<About />} />
             <Route path='/contacto' element={<Contacto />} />
-            <Route path='/carrito' element={<Carrito productosCarrito={productosCarrito} manejoEliminar={eliminarDelCarrito} />} />  
+            <Route path='/carrito' element={<Carrito productosCarrito={productosCarrito} manejoEliminar={eliminarDelCarrito} usuarioLogeado={usuarioLogeado} vaciarCarrito={vaciarCarrito}/>} />  
             <Route path='/login' element={<Login user={usuarioLogeado} admin={adminLogeado} setLogeadoAdmin={manejarAdmin} setLogeadoUser={manejarUser}/>}/>
             <Route path='/admin' element={adminLogeado ? <Admin/> : <Navigate to={"/login"} replace/>} />
             <Route path="/productos/:id" element={<ProductoDetalle manejoCarrito={manejoCarrito} />} />

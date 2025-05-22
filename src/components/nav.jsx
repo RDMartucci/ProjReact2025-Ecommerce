@@ -19,7 +19,7 @@ export default function Nav({productosCarrito}) {
                     <li><Link to="/login" className='link-nav'>log in</Link> </li>  
                     <li><Link to="/admin" className='link-nav'>admin</Link> </li>  
                     <li><Link to="/carrito" className='link-nav'>carrito 
-                        <span className='cantidad-en-carrito'>{productosCarrito.length > 0 ? productosCarrito.length : ""}</span>
+                        <span className='cantidad-en-carrito'>{productosCarrito.length > 0 ? productosCarrito.length : "0"}</span>
                         </Link>
                     </li>
                 </ul>
