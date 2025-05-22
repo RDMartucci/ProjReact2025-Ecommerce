@@ -44,8 +44,14 @@ img.card-producto-img {
     box-shadow: 0px 0px 5px 3px var(--sombra01);
 }
 button.card-producto-btn {
+    margin: 0 0 5px;
     padding: 0.3em 2em;
-    background-color: var(--orange2);
+    /* background-color: var(--orange2); */
+    background-color: var(--indigo);
+    color: var(--blanco);
+}
+.card-producto-btn:hover{
+    color: var(--orange2);
 }
 
 /* Card Producto Detalles */
@@ -95,8 +101,14 @@ button.card-producto-btn {
 .btn-prod-cantidad{
     font-size:larger;
     background-color: var(--blanco2t);
-    border-radius: 70%;
+    padding: 10px;
 }
+/* .btn-menos{
+    background-color: var(--orange2);
+}
+.btn-mas{
+    background-color: var(--turquoise);
+} */
 .btn-agregar-al-carrito{
     background-color: var(--orange2);
     position: relative;
@@ -156,7 +168,7 @@ button.card-carrito-btn{
 }
 .carrito-boton-eliminar-prod{
     margin-right: 5px;
-    padding: 0.3em 1em;
+    /* padding: 0.3em 1em; */
     background-color: var(--orange);
     color: var(--black);
     width: 5%;
@@ -170,7 +182,7 @@ button.card-carrito-btn{
     .card-producto{
         width: 80%;
         height: auto;
-        margin: auto;
+        margin: 0 auto 10px;
     }
 }
 

@@ -54,9 +54,10 @@ export default function Carrito({ productosCarrito, manejoEliminar, usuarioLogea
                             </div> 
                             : <></>}
             {/*botones para vaciar carrito y realizar pedido(simula exito de compra) */}
-                {productosCarrito.length > 0 ? <div className='vaciar-carrito'>
-                                                    <button className='btn-vaciar-carrito'>vaciar carrito</button>
-                                                    <button className='btn-comprar'>hacer pedido!</button>
+                {productosCarrito.length > 0 ? <div className='carrito-acciones'>
+                                                    <button className='btn-vaciar-carrito btn-accion-carrito'>vaciar carrito</button>
+                                                    <button className='btn-continuar btn-accion-carrito'>continuar comprando</button>
+                                                    <button className='btn-comprar btn-accion-carrito'>hacer pedido!</button>
                                                 </div> : <></>}
 
             </div>
