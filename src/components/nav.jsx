@@ -1,7 +1,7 @@
 import '../styles/nav.css';
 import { Link } from 'react-router-dom';
 
-export default function Nav({productosCarrito}) {
+export default function Nav({productosCarrito, adminLogeado}) {
 //array de links para el NAV.
     //const links = ['Home','Productos','Acerca de','Contacto','Carrito'];
     return (
@@ -17,7 +17,10 @@ export default function Nav({productosCarrito}) {
                     <li><Link to="/acerca" className='link-nav'>acerca de</Link></li>  
                     <li><Link to="/contacto" className='link-nav'>contacto</Link></li>  
                     <li><Link to="/login" className='link-nav'>log in</Link> </li>  
-                    <li><Link to="/admin" className='link-nav'>admin</Link> </li>  
+                    {/*no muestra la opcion admin si no esta logueado como admin */}
+                    {adminLogeado &&  
+                    <li><Link to="/admin" className='link-nav'>admin</Link> </li>}
+                      
                     <li><Link to="/carrito" className='link-nav'>carrito 
                         <span className='cantidad-en-carrito'>{productosCarrito.length > 0 ? productosCarrito.length : "0"}</span>
                         </Link>

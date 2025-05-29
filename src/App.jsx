@@ -14,6 +14,7 @@ import About from './components/acerca';
 import Admin from './components/admin';
 import Login from './components/Login';
 import Contacto from './components/contacto';
+import RutaProtegida from './components/rutaProtegida';
 
 function App() {
   const [productosCarrito, setProductosCarrito] = useState([])
@@ -63,14 +64,18 @@ function App() {
       <Router>
         <div>
           <Header />
-          <Nav productosCarrito={productosCarrito}/>
+          <Nav productosCarrito={productosCarrito} adminLogeado={adminLogeado}/>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/productos' element={<ProductosContainer />} />
             {/* <Route path='/productos' element={<PagProductos manejoCarrito={manejoCarrito}/>}/> */}
             <Route path='/acerca' element={<About />} />
             <Route path='/contacto' element={<Contacto />} />
-            <Route path='/carrito' element={<Carrito productosCarrito={productosCarrito} manejoEliminar={eliminarDelCarrito} usuarioLogeado={usuarioLogeado} vaciarCarrito={vaciarCarrito}/>} />  
+            <Route path='/carrito' element={<RutaProtegida estaLogueado={adminLogeado}>
+                                              <Carrito productosCarrito={productosCarrito} manejoEliminar={eliminarDelCarrito}>
+                                              </Carrito> 
+                                            </RutaProtegida>} 
+            />  
             <Route path='/login' element={<Login user={usuarioLogeado} admin={adminLogeado} setLogeadoAdmin={manejarAdmin} setLogeadoUser={manejarUser}/>}/>
             <Route path='/admin' element={adminLogeado ? <Admin/> : <Navigate to={"/login"} replace/>} />
             <Route path="/productos/:id" element={<ProductoDetalle manejoCarrito={manejoCarrito} />} />

@@ -4,7 +4,7 @@ import CardCarrito from "./CardCarrito.jsx";
 import { Navigate } from 'react-router-dom';
 
 
-export default function Carrito({ productosCarrito, manejoEliminar, usuarioLogeado, vaciarCarrito }) {
+export default function Carrito({ productosCarrito, manejoEliminar }) {
     console.log("Cant productos en carrito: ", productosCarrito.length);
     const total = productosCarrito.reduce((subTotal, producto) => (
         subTotal + producto.price * producto.cantidad)
@@ -15,11 +15,11 @@ export default function Carrito({ productosCarrito, manejoEliminar, usuarioLogea
         manejoEliminar(id)
     }
 
-    if(!usuarioLogeado){
-        return(
-            <Navigate to="/login" replace/>
-        )
-    }
+    // if(!usuarioLogeado){
+    //     return(
+    //         <Navigate to="/login" replace/>
+    //     )
+    // }
     return (
         <>
             <div className="carrito-container">
