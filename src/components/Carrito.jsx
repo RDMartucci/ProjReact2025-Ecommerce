@@ -18,6 +18,8 @@ export default function Carrito() {
         , 0);
     console.log("Total: " + precioTotal);
 
+    console.log('usuario:', usuario);
+
     function funcionDisparadora(id){
         borrarProductoCarrito(id)
     };
@@ -27,6 +29,7 @@ export default function Carrito() {
     };
 
     if(!usuario){
+        console.log('usuario no logueado:', usuario);
         return(
             <Navigate to="/login" replace/>
         )

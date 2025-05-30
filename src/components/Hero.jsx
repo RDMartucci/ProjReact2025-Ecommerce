@@ -1,6 +1,6 @@
 import '../styles/main.css';
 
-export default function Main() {
+export default function Hero() {
 
     return (
         <>

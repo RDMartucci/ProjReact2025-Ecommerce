@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import { useAuthContext } from '../contexts/AuthContext';
 import { creaUsuario } from '../auth/firebase';
 
-export default function Login2() {
+export default function Login() {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const { login, usuario, logout } = useAuthContext();
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     // Simulación de autenticación
     if (user === 'admin' && password === '1234') {
@@ -26,20 +26,21 @@ export default function Login2() {
     login(user)
   }
 
-  const handleSubmit2 = (e) => {
+  const handleLogout = (e) => {
     logout()
   }
 
-  if (user == "admin") {
+  if (usuario == "admin") {
     return (
-      <form onSubmit={handleSubmit2}>
+      <form onSubmit={handleLogout}>
         <button type="submit">Cerrar sesión</button>
       </form>
     )
   }
   return (
+    <>
     <div className='login-container'>
-      <form className="login" onSubmit={handleSubmit}>
+      <form className="login" onSubmit={handleLogin}>
         <h2>Iniciar sesión</h2>
         <div>
           <label>Usuario:</label>
@@ -59,7 +60,8 @@ export default function Login2() {
         </div>
         <button type="submit">Iniciar sesión</button>
       </form>
-
+    </div>
+    <div className='registro-container'>
       <form className='registro' onSubmit={registrarUsuario}>
         <h2>Registrarse</h2>
         <div>
@@ -81,5 +83,6 @@ export default function Login2() {
         <button type="submit">Registrarse</button>
       </form>
     </div>
+    </>
   );
 }
