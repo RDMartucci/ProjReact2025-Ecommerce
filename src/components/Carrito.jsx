@@ -2,24 +2,37 @@ import '../styles/carrito.css';
 import '../styles/Cards.css';
 import CardCarrito from "./CardCarrito.jsx";
 import { Navigate } from 'react-router-dom';
+import { CarritoContext } from '../contexts/CarritoContext.jsx';
+import { useAuthContext } from '../contexts/AuthContext.jsx';
+import { useContext } from 'react';
 
 
-export default function Carrito({ productosCarrito, manejoEliminar }) {
+export default function Carrito() {
+    const {usuario} = useAuthContext();
+    const {productosCarrito, vaciarCarrito, borrarProductoCarrito} = useContext(CarritoContext);
+
     console.log("Cant productos en carrito: ", productosCarrito.length);
-    const total = productosCarrito.reduce((subTotal, producto) => (
+
+    const precioTotal = productosCarrito.reduce((subTotal, producto) => (
         subTotal + producto.price * producto.cantidad)
         , 0);
-    console.log("Total: " + total);
+    console.log("Total: " + precioTotal);
 
-    function funcionDisparadora(id) {
-        manejoEliminar(id)
+    function funcionDisparadora(id){
+        borrarProductoCarrito(id)
+    };
+
+    function funcionDisparadora2(){
+        vaciarCarrito()
+    };
+
+    if(!usuario){
+        return(
+            <Navigate to="/login" replace/>
+        )
     }
 
-    // if(!usuarioLogeado){
-    //     return(
-    //         <Navigate to="/login" replace/>
-    //     )
-    // }
+
     return (
         <>
             <div className="carrito-container">
@@ -45,17 +58,17 @@ export default function Carrito({ productosCarrito, manejoEliminar }) {
                 
                 ))
                     : <div className='carrito-titulo marg-top3'>
-                        <span className='carrito-total carrito-vacio'>Carrito vacío</span>
+                        <span className='carrito-total carrito-vacio'>carrito vacío</span>
                     </div>}
-                {total > 0 ? <div className='carrito-titulos'>
+                {precioTotal > 0 ? <div className='carrito-titulos'>
                                 <span className='carrito-total'>Total a pagar: 
-                                    <span className='monto-total'>$ {total.toFixed(2)} </span>
+                                    <span className='monto-total'>$ {precioTotal.toFixed(2)} </span>
                                 </span>
                             </div> 
                             : <></>}
             {/*botones para vaciar carrito y realizar pedido(simula exito de compra) */}
                 {productosCarrito.length > 0 ? <div className='carrito-acciones'>
-                                                    <button className='btn-vaciar-carrito btn-accion-carrito'>vaciar carrito</button>
+                                                    <button onClick={funcionDisparadora2} className='btn-vaciar-carrito btn-accion-carrito'>vaciar carrito</button>
                                                     <button className='btn-continuar btn-accion-carrito'>continuar comprando</button>
                                                     <button className='btn-comprar btn-accion-carrito'>hacer pedido!</button>
                                                 </div> : <></>}

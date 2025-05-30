@@ -1,9 +1,15 @@
 import '../styles/nav.css';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { CarritoContext } from "../contexts/CarritoContext";
+// import { useAuthContext } from '../contexts/AuthContext';
 
-export default function Nav({productosCarrito, adminLogeado}) {
+export default function Nav() {
 //array de links para el NAV.
     //const links = ['Home','Productos','Acerca de','Contacto','Carrito'];
+    const {productosCarrito} = useContext(CarritoContext);
+    // const {usuario} = useAuthContext();
+
     return (
         <>
             <nav aria-label="Navegación principal">
@@ -18,9 +24,9 @@ export default function Nav({productosCarrito, adminLogeado}) {
                     <li><Link to="/contacto" className='link-nav'>contacto</Link></li>  
                     <li><Link to="/login" className='link-nav'>log in</Link> </li>  
                     {/*no muestra la opcion admin si no esta logueado como admin */}
-                    {adminLogeado &&  
-                    <li><Link to="/admin" className='link-nav'>admin</Link> </li>}
-                      
+                    {/* {usuario &&  
+                    <li><Link to="/admin" className='link-nav'>admin</Link> </li>} */} 
+                    <li><Link to="/admin" className='link-nav'>admin</Link> </li>
                     <li><Link to="/carrito" className='link-nav'>carrito 
                         <span className='cantidad-en-carrito'>{productosCarrito.length > 0 ? productosCarrito.length : "0"}</span>
                         </Link>

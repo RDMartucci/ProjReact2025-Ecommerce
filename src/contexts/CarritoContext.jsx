@@ -6,8 +6,8 @@ export function CarritoProvider({ children }) {
     const [productosCarrito, setProductosCarrito] = useState([]);
 
     const agregarAlCarrito = (producto) => {
-        const existe = productosCarrito.find(p => p.id === producto.id);
-        if (existe) {
+        const existeProducto = productosCarrito.find(p => p.id === producto.id);
+        if (existeProducto) {
             const carritoActualizado = productosCarrito.map((p) => {
                 if (p.id === producto.id){
                     const productoActualizado = {...p, cantidad: p.cantidad + producto.cantidad}
@@ -29,7 +29,8 @@ export function CarritoProvider({ children }) {
     };
 
     function borrarProductoCarrito(id){
-        console.log(id)
+        console.log('producto a eliminar con id:',id);
+        
         const nuevoCarrito = productosCarrito.filter((p) => p.id !== id);
         setProductosCarrito(nuevoCarrito);
     }

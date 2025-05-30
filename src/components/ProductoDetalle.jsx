@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import '../styles/Cards.css';
 // import "../styles/ProductoDetalle.css";
 import { Mensaje } from "../assets/SweetAlert";
+import { CarritoContext } from "../contexts/CarritoContext";
 
-function ProductoDetalle({ manejoCarrito }) {
+
+function ProductoDetalle({}) {
+    const {agregarAlCarrito} = useContext(CarritoContext);
     const { id } = useParams();
     const [producto, setProducto] = useState(null);
-    const [cantidad, setCantidad] = useState(1);
+    const [cantidad, setCantidad] = useState(1);//Comienza en 1 la cantidad.
     const [cargando, setCargando] = useState(true);
     const [error, setError] = useState(null);
 
@@ -30,11 +33,18 @@ function ProductoDetalle({ manejoCarrito }) {
             });
     }, [id]);
 
-    function agregarAlCarrito() {
+    function funcionCarrito() {
         if (cantidad < 1) return;
         Mensaje("Producto Agregado", "El producto fue agregado al carrito con éxito", "success", "Cerrar");
-        manejoCarrito({ ...producto, cantidad });
+        agregarAlCarrito({ ...producto, cantidad });
     }
+
+
+    // function agregarAlCarrito() {
+    //     if (cantidad < 1) return;
+    //     Mensaje("Producto Agregado", "El producto fue agregado al carrito con éxito", "success", "Cerrar");
+    //     manejoCarrito({ ...producto, cantidad });
+    // }
 
     function sumarContador() {
         setCantidad(cantidad + 1);
@@ -60,7 +70,7 @@ function ProductoDetalle({ manejoCarrito }) {
                     <span className="prod-cantidad">{cantidad}</span>
                     <button onClick={sumarContador} className="btn-prod-cantidad btn-mas">+</button>
                 </div>
-                <button onClick={agregarAlCarrito} className="btn-agregar-al-carrito">Agregar al carrito</button>
+                <button onClick={funcionCarrito} className="btn-agregar-al-carrito">Agregar al carrito</button>
             </div>
         </div>
     );
