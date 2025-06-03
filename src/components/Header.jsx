@@ -1,5 +1,5 @@
 import '../styles/header.css';
-import Nav from './nav';
+import Nav from './Nav';
 //importo el logo del sitio.
 import broncoLogo from "../assets/broncomuebles-logo-chico01.png";
 

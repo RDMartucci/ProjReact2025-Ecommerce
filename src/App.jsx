@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './styles/App.css';
 
 import Home from './layouts/Home'
-import Nav from './components/nav';
+import Nav from './components/Nav';
 import ProductosContainer from './components/ProductosContainer';
 import ProductoDetalle from './components/ProductoDetalle';
 import Carrito from './components/Carrito';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import About from './components/acerca';
-import Admin from './components/admin';
-import Login from './components/Login';
-import Contacto from './components/contacto';
+import About from './layouts/Acerca';
+import Admin from './layouts/Admin';
+import Login from './layouts/Login';
+import Contacto from './layouts/Contacto';
 import RutaProtegida from './components/rutaProtegida';
 
 function App() {

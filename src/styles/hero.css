@@ -19,12 +19,17 @@ main section {
 ul li{
     margin-bottom: 1em;
 }
-ul li span {
+.texto-color-sombra {
     text-transform: capitalize;
     color: var(--blanco);
     text-shadow: 1px 1px 5px var(--black);
 }
-ul li p {
+.leyenda {
     color: var(--turquoise);
     line-height: 16.2px;
+}
+
+.texto-espaciado{
+    text-transform: lowercase;
+    line-height: 2em;
 }
